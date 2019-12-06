@@ -2,8 +2,10 @@
 #include<cstring>
 #include<iostream>
 #include<fstream>
-#include<string>
+#include<string.h>
 #include<sstream>
+#include <stdint.h>
+#include <stdio.h>
 using namespace std;
 
 Data d;
