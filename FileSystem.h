@@ -1,12 +1,5 @@
 #pragma once
 #include <stdint.h>
-#include <stdio.h>
-#include<cstring>
-#include<iostream>
-#include<fstream>
-#include<string.h>
-#include<sstream>
-
 extern bool isMounted;
 struct Inode{
 	char name[6];        // Name of the file or directory
