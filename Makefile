@@ -1,4 +1,4 @@
-CC = gcc
+CC = g++
 CFLAGS = -std=c++11 -Wall -Werror -g -O2
 SOURCES = $(wildcard *.cpp)
 OBJECTS = $(SOURCES:%.cpp=%.o)

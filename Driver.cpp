@@ -27,7 +27,7 @@ void mount(string str, int error_num)
 	fileName = str.substr(0, str.find(" "));
 	str.erase(0, str.find(" "));
 	trim(str);
-	if (str.length() > 0)
+	if (str.length() == 0)
 	{
 		const char *c = fileName.c_str();
 		fs_mount(c);
