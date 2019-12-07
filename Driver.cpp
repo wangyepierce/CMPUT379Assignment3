@@ -381,9 +381,9 @@ int main()
 		str.erase(0, 2);
 		cout << command << endl;
 		cout << str << endl;
-		if (command.length() > 1)
-			cerr << "Error: " << inputfile << ", " << i << endl;
-		else if (command == "M")
+		// if (command.length() > 1)
+		// 	cerr << "Error: " << inputfile << ", " << i << endl;
+		if (command == "M")
 			mount(str, i);
 		else if (command == "C")
 			create(str, i);
