@@ -1,16 +1,9 @@
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <iterator>
-#include <functional>
-#include <cctype>
-#include <locale>
-#include <stdlib.h>
-#include <bits/stdc++.h>
-#include "FileSystem.h"
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<fstream>
+#include<sstream>
+#include"FileSystem.h"
 using namespace std;
 
 string inputfile="in.txt";	//this is the input file in which all the commands are written
@@ -415,41 +408,24 @@ int main()
 	return 0;
 }
 
-std::string& ltrim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
+void trim(string& ref)
 {
-    str.erase(0, str.find_first_not_of(chars));
-    return str;
+	int end;
+	bool flag = true;
+	while (flag&&ref.length()>0)
+	{
+		end = ref.back();
+		if (end != ' ')
+			flag = false;
+		else
+			ref.pop_back();
+		end--;
+	}
+	flag = true;
+	int i = 0;
+	while (flag)
+		if (ref[i] == ' ')
+			ref.erase(0, 1);
+		else
+			flag = false;
 }
- 
-std::string& rtrim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
-{
-    str.erase(str.find_last_not_of(chars) + 1);
-    return str;
-}
-
-std::string& trim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
-{
-    return ltrim(rtrim(str, chars), chars);
-}
-
-// void trim(string& ref)
-// {
-// 	int end;
-// 	bool flag = true;
-// 	while (flag&&ref.length()>0)
-// 	{
-// 		end = ref.back();
-// 		if (end != ' ')
-// 			flag = false;
-// 		else
-// 			ref.pop_back();
-// 		end--;
-// 	}
-// 	flag = true;
-// 	int i = 0;
-// 	while (flag)
-// 		if (ref[i] == ' ')
-// 			ref.erase(0, 1);
-// 		else
-// 			flag = false;
-// }
