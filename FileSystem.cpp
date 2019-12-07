@@ -75,7 +75,7 @@ void fs_create(const char name[5], int size)
 						}
 						tempLoc = 0;
 					}
-					strcpy_s(d.supBlock.inode[i].name, name);
+					strcpy(d.supBlock.inode[i].name, name);
 					d.supBlock.inode[i].dir_parent = PWD;
 					if (!size)
 					{
@@ -115,7 +115,7 @@ void deleteDirectory(char parent)
 		{
 			if (!(d.supBlock.inode[i].dir_parent >> 7))
 			{
-				strcpy_s(d.supBlock.inode[i].name, "");
+				strcpy(d.supBlock.inode[i].name, "");
 				d.supBlock.inode[i].dir_parent = 0;
 				char start = d.supBlock.inode[i].start_block, size = d.supBlock.inode[i].used_size << 1;
 				size >>= 1;
@@ -156,7 +156,7 @@ void fs_delete(const char name[5])
 		{
 			if (!(d.supBlock.inode[i].dir_parent >> 7))
 			{
-				strcpy_s(d.supBlock.inode[i].name, "");
+				strcpy(d.supBlock.inode[i].name, "");
 				d.supBlock.inode[i].dir_parent = 0;
 				char start = d.supBlock.inode[i].start_block, size= d.supBlock.inode[i].used_size << 1;
 				size >>= 1;
@@ -183,7 +183,7 @@ void fs_delete(const char name[5])
 			else
 			{
 				deleteDirectory(i);
-				strcpy_s(d.supBlock.inode[i].name, "");
+				strcpy(d.supBlock.inode[i].name, "");
 				d.supBlock.inode[i].dir_parent = 0;
 				d.supBlock.inode[i].used_size = 0;
 			}
