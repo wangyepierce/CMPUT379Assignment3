@@ -17,6 +17,7 @@ void trim(string& ref);
 void mount(string str, int error_num)
 {
 	trim(str);
+	cout << "coming to mount" << endl;
 	if (str == "")
 	{
 		cerr << "Error: " << inputfile << ", " << error_num << endl;
