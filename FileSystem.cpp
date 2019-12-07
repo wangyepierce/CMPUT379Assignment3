@@ -1,8 +1,8 @@
 #include "FileSystem.h"
-#include<cstring>
-#include<iostream>
-#include<fstream>
-#include<string>
+#include <cstring>
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 Data d;
 char PWD=127;

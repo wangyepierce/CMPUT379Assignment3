@@ -1,9 +1,17 @@
-#include<iostream>
-#include<string>
-#include<cstring>
-#include<fstream>
-#include<sstream>
-#include"FileSystem.h"
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
+#include <iterator>
+#include <functional>
+#include <cctype>
+#include <locale>
+#include <conio.h>
+#include <stdlib.h>
+#include <bits/stdc++.h>
+#include "FileSystem.h"
 using namespace std;
 
 string inputfile="in.txt";	//this is the input file in which all the commands are written
@@ -12,7 +20,7 @@ string fileName; //this is used for fileNames to create,delete, resize etc ..
 int fileLength; //that's the length of the file to create *this will behave as block number as well
 bool isMounted = false; //true it when you find a consistent file system and mount it on your file system.
 
-void trim(string& ref);
+// void trim(string& ref);
 
 void mount(string str, int error_num)
 {
@@ -408,24 +416,41 @@ int main()
 	return 0;
 }
 
-void trim(string& ref)
+std::string& ltrim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
 {
-	int end;
-	bool flag = true;
-	while (flag&&ref.length()>0)
-	{
-		end = ref.back();
-		if (end != ' ')
-			flag = false;
-		else
-			ref.pop_back();
-		end--;
-	}
-	flag = true;
-	int i = 0;
-	while (flag)
-		if (ref[i] == ' ')
-			ref.erase(0, 1);
-		else
-			flag = false;
+    str.erase(0, str.find_first_not_of(chars));
+    return str;
 }
+ 
+std::string& rtrim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
+{
+    str.erase(str.find_last_not_of(chars) + 1);
+    return str;
+}
+
+std::string& trim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
+{
+    return ltrim(rtrim(str, chars), chars);
+}
+
+// void trim(string& ref)
+// {
+// 	int end;
+// 	bool flag = true;
+// 	while (flag&&ref.length()>0)
+// 	{
+// 		end = ref.back();
+// 		if (end != ' ')
+// 			flag = false;
+// 		else
+// 			ref.pop_back();
+// 		end--;
+// 	}
+// 	flag = true;
+// 	int i = 0;
+// 	while (flag)
+// 		if (ref[i] == ' ')
+// 			ref.erase(0, 1);
+// 		else
+// 			flag = false;
+// }
