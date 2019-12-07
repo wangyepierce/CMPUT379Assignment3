@@ -379,6 +379,7 @@ int main()
 		getline(vDisk, str);
 		command = str.substr(0, str.find(" "));
 		str.erase(0, 2);
+		cout << command << endl;
 		if (command.length() > 1)
 			cerr << "Error: " << inputfile << ", " << i << endl;
 		else if (command == "M")
