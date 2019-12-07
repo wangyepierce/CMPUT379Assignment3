@@ -17,8 +17,6 @@ void trim(string& ref);
 void mount(string str, int error_num)
 {
 	trim(str);
-	// cout << "coming to mount" << endl;
-	cout << str << endl;
 	if (str == "")
 	{
 		cerr << "Error: " << inputfile << ", " << error_num << endl;
@@ -381,11 +379,9 @@ int main()
 		getline(vDisk, str);
 		command = str.substr(0, str.find(" "));
 		str.erase(0, 2);
-		cout << command << endl;
-		cout << str << endl;
-		// if (command.length() > 1)
-		// 	cerr << "Error: " << inputfile << ", " << i << endl;
-		if (command == "M")
+		if (command.length() > 1)
+			cerr << "Error: " << inputfile << ", " << i << endl;
+		else if (command == "M")
 			mount(str, i);
 		else if (command == "C")
 			create(str, i);
