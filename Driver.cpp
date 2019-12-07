@@ -380,6 +380,7 @@ int main()
 		command = str.substr(0, str.find(" "));
 		str.erase(0, 2);
 		cout << command << endl;
+		cout << str << endl;
 		if (command.length() > 1)
 			cerr << "Error: " << inputfile << ", " << i << endl;
 		else if (command == "M")
