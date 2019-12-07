@@ -19,7 +19,7 @@ string fileName; //this is used for fileNames to create,delete, resize etc ..
 int fileLength; //that's the length of the file to create *this will behave as block number as well
 bool isMounted = false; //true it when you find a consistent file system and mount it on your file system.
 
-// void trim(string& ref);
+void trim(string& ref);
 
 void mount(string str, int error_num)
 {
