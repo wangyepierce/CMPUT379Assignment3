@@ -368,7 +368,8 @@ void cd(string str, int error_num)
 int main()
 {
 	
-	cout << "Enter the input file: "; cin >> inputfile;
+	cout << "Enter the input file: "; 
+	cin >> inputfile;
 	vDisk.open(inputfile);
 	string str;
 	string command;
