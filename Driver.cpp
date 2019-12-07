@@ -16,7 +16,7 @@ void trim(string& ref);
 
 void mount(string str, int error_num)
 {
-	trim(str);
+	// trim(str);
 	cout << "coming to mount" << endl;
 	if (str == "")
 	{
