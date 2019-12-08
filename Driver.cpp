@@ -25,22 +25,13 @@ void mount(string str, int error_num)
 	fileName = str.substr(0, str.find(" "));
 	str.erase(0, str.find(" "));
 	trim(str);
-	// if (str.length() == 0)
-	// {
-	// 	const char *c = fileName.c_str();
-	// 	fs_mount(c);
-	// }
-	// else
-	// 	cerr << "Error: " << inputfile << ", " << error_num << endl;
-
 	if (str.length() == 0)
 	{
-		cerr << "Error: " << inputfile << ", " << error_num << endl;
-	} 
-	else {
 		const char *c = fileName.c_str();
 		fs_mount(c);
 	}
+	else
+		cerr << "Error: " << inputfile << ", " << error_num << endl;
 }
 void create(string str, int error_num)
 {
